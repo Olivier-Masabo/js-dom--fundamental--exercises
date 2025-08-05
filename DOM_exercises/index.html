@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="index.css">
+
+    <title>JavaScript Demo</title>
+</head>
+
+<body>
+<button id="togg"><i class="fa-solid fa-star-and-crescent"></i></button>
+<h1>TodoList app</h1>
+<div id="main">
+
+    <input type="text" placeholder="enter task" id="input">
+    <button id="butto">Add</button>
+</div><br>
+
+<div id="counter">
+    <div id="display">0</div>
+    <button id="increment">Increment</button>
+    <button id="reset">Reset</button>
+    <button id="decrement">Decrement</button>
+</div>
+
+<script>
+    let myButto = document.getElementById("butto")
+    myButto.addEventListener("click", function(){
+    let main = document.getElementById("main")
+    let myinput = document.getElementById("input")
+    let para = document.createElement("li")
+    para.textContent = myinput.value
+    main.appendChild(para)
+    myinput.value = ""
+    })
+
+    let display =document.getElementById("display")
+    let increment = document.getElementById("increment")
+    let reset = document.getElementById("reset")
+    let decrement = document.getElementById("decrement")
+    let count =0;
+
+    increment.addEventListener("click",function(){
+        count += 1;
+        display.textContent = count
+    })
+    reset.addEventListener("click",function(){
+        count = 0;
+        display.textContent = count
+    })
+    decrement.addEventListener("click",function(){
+        count -= 1;
+        if(count < 0){
+            count = 0;
+        display.textContent = count
+        }else{
+        display.textContent = count}
+    })
+
+    let butto =document.getElementById("togg")
+    togg.addEventListener("click",function(){
+        document.body.classList.toggle("darkmode")
+
+        if(document.body.classList.contains("darkmode")){
+            butto.innerHTML = "<i class=\"fa-solid fa-sun\"></i>"
+
+        }else{
+          butto.innerHTML ="<i class=\"fa-solid fa-star-and-crescent\"></i>"
+        }
+    })
+
+</script>
+
+    
+</body>
+
+</html> 

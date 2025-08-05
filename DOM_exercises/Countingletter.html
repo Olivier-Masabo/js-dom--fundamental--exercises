@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Counting</title>
+ </head>
+ <body>
+    <div class="main">
+
+        <textarea name="" id="text" placeholder="text_here"></textarea>
+
+    </div>
+    <script>
+       
+        let main = document.querySelector(".main")
+        let text = document.getElementById("text")
+        let display =document.createElement("h3");
+        display.textContent = "0"
+        main.appendChild(display)
+         
+          text.addEventListener("input", ()=>{
+             let currentLength = text.value
+             display.textContent = currentLength;
+          })
+       
+    </script>
+ </body>
+ </html>

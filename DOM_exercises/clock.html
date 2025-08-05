@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+</head>
+<body>
+    <div id="main">
+        <h2>Welcome back this is my digital clock</h2>
+        <span id="hour">00</span> :
+        <span id="minutes">00</span> :
+        <span id="seconds">00</span>
+        <span id="toggl">P.M</span>
+    </div>
+    <script>
+        let hour =document.getElementById("hour");
+        let minutes =document.getElementById("minutes");
+        let seconds =document.getElementById("seconds");
+        let toggl =document.getElementById("toggl")
+        setInterval(() =>{
+
+            let date =new Date()
+            if(date.getHours() < 10){
+                minutes.textContent =`0${date.getHours()}`
+                
+            }else{
+                hour.textContent =date.getHours()
+
+            }
+            if(date.getMinutes() < 10){
+                minutes.textContent =`0${date.getMinutes()}`
+
+            }else{
+
+                minutes.textContent =date.getMinutes()
+            }
+
+            if(date.getSeconds() < 10){
+            seconds.textContent =`0${date.getSeconds()}`
+        } else{
+                seconds.textContent = date.getSeconds()
+
+            }
+            if(date.getHours() > 11){
+                toggl.textContent = "P.M"
+            }else{
+                toggl.textContent = "A.M"
+
+            }
+         })
+      
+
+    </script>
+</body>
+</html>

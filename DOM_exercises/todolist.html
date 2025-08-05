@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-Do list</title>
+ </head>
+ <body>
+    <div class="main">
+        <h2>Add task to list</h2>
+        <input type="text" name="" id="input">
+        <button id="add">Add</button>
+    </div>
+    <script>
+       let butto = document.getElementById("add")
+       butto.addEventListener("click",() =>{
+          let main =document.querySelector(".main")
+         let input =document.getElementById("input")
+         let list =document.createElement("h3")
+         list.textContent = input.value;
+         main.appendChild(list)
+         input.value = "";
+        
+      })
+    </script>
+ </body>
+ </html>

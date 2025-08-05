@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    #main {
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        width: 100%;
+        width: 50%;
+    }
+
+    #myinput {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    #add {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #add:hover {
+        background-color: #218838;
+    }
+
+    .newDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e9ecef;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .newDiv li {
+        list-style: none;
+        font-weight: bold;
+    }
+
+    .newDiv button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right:0 8px;
+    }
+
+    .newDiv button:hover {
+        background-color: #c82333;
+    }
+
+    .newDiv input[type="checkbox"] {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    .leftDiv button{
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <input type="text" name="" id="myinput" placeholder="text here...">
+        <button id="add">Add Task</button>
+        <div id="options">
+           <label for="all">All</label> <input type="radio" name="check" id="all">
+           <label for="completed">completed</label> <input type="radio" name="check" id="completed">
+           <label for="notcompleted">notcompleted</label> <input type="radio" name="check" id="notcompleted">
+        </div>
+        <div id="added"></div>
+    </div>
+
+    <script>
+    let added =document.getElementById("added")
+    let myinput =document.getElementById("myinput")
+    let butto =document.getElementById("add")
+    // const all = document.getElementById("all")
+    // const completed = document.getElementById("completed")
+    // const notCompleted = document.getElementById("notcompleted")
+    const options = document.querySelector("#options")
+    console.log(options)
+    butto.addEventListener("click",function(){
+        
+        if(myinput.value !== ''){
+            let list =document.createElement("li")
+            list.textContent= myinput.value;
+            let completed = document.createElement("input")
+            completed.type ="checkbox";
+            completed.setAttribute("id","checking")
+            let deletebtn = document.createElement("button")
+            deletebtn.textContent ="delete"
+            deletebtn.addEventListener("click",()=>{
+                added.removeChild(division)
+            })
+        
+            let left = document.createElement('div')
+            left.classList.add("leftDiv")
+            left.append(completed,deletebtn)
+            let division = document.createElement("div")
+            division.classList.add("newDiv")
+            division.append(list,left)
+            
+            added.append(division)
+            myinput.value =""
+        }
+        else{
+            alert("please fill😒😒😒😒😒😒😒😒")
+        }
+        options.addEventListener("click",(e)=>{
+            const choice = e.target
+            if(e.target.id == "completed"){
+                const parent = added
+                const checkedElement = parent.firstChild.firstChild.nextSibling.firstChild;
+                if(checkedElement.checked === false){
+                    checkedElement.parentElement.parentElement.style.display = "none"
+                    // console.log(checkedElement.parentElement.parentElement)
+                }
+
+                    
+            }
+        })
+
+        
+    }
+
+    )
+    </script>
+</body>
+</html>

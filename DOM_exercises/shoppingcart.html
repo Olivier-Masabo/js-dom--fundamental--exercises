@@ -1,0 +1,336 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> online shopping cart</title>
+ </head>
+<<<<<<< HEAD
+ <style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #main{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .middle{
+            border: 2px solid lime;
+            padding: 40px;
+            position: relative;
+        }
+ .price {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
+  }
+  h3{
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  #buy {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: green;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  .middle input[type="number"] {
+    width: 50%;
+    margin-top: 10px;
+    padding: 5px;
+     position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ </style>
+ 
+=======
+
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  #main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .middle {
+    width: 280px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .middle img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .price {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  input[type="number"] {
+    width: 60%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  #buy {
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #buy:hover {
+    background-color: darkgreen;
+  }
+
+  #added {
+    margin-top: 40px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+
+  td {
+    color: #333;
+  }
+</style>
+
+>>>>>>> c9b1ebe22c6aaf7a9b3261b66c418cd5fecccc9e
+ <body>
+    <h1>online shopping</h1>
+    <div id="main">
+        <div class="middle">
+<<<<<<< HEAD
+            <h3>Laptop</h3>
+            <img src="img1.webp" alt="">
+=======
+            <h3 id="item1">Laptop</h3>
+            <img src="./images/img1.webp" alt="">
+>>>>>>> c9b1ebe22c6aaf7a9b3261b66c418cd5fecccc9e
+            <div class="price">550 €</div>
+            <input type="number" id="numberValue">
+            <button id="buy">buy</button>
+        </div>
+
+        <div class="middle">
+            <h3>headphone</h3>
+<<<<<<< HEAD
+            <img src="img2.webp" alt="">
+=======
+            <img src="./images/img2.webp" alt="">
+>>>>>>> c9b1ebe22c6aaf7a9b3261b66c418cd5fecccc9e
+              <div class="price">30 €</div>
+            <input type="number" id="numberValue">
+            <button id="buy">buy</button>
+        </div>
+
+        <div class="middle">
+            <h3>Smart TV</h3>
+
+<<<<<<< HEAD
+            <img src="img3.webp" alt="">
+=======
+            <img src="./images/img3.webp" alt="">
+>>>>>>> c9b1ebe22c6aaf7a9b3261b66c418cd5fecccc9e
+              <div class="price">250 €</div>
+            <input type="number" id="numberValue">
+            <button id="buy">buy</button>
+        </div>
+    </div>
+    <div id="added">
+<<<<<<< HEAD
+
+    </div>
+
+    <script>
+        let price = document.querySelector(".price").textContent
+        let input =document.getElementById("numberValue")
+        let buyButto =document.getElementById("buy")
+        let laptop =550;
+        let headphone =30;
+        let smarttv =250;
+        let added = document.getElementById("added")
+   
+        buyButto.addEventListener("click",function(){
+            if(input.value.length !==0){
+              let main =document.getElementById("added")
+              let item = document.querySelector("h3")
+              let tableItem = document.createElement("td")
+              tableItem.textContent = item.textContent
+              main.appendChild(tableItem)
+
+            let quantity = document.createElement("td")
+            quantity.textContent =input.value;
+            main.appendChild(quantity)
+
+            let priceItem =document.createElement("td")
+            priceItem.textContent =parseFloat(price)
+            main.appendChild(priceItem)
+
+            let total= document.createElement("td")
+            total.textContent = quantity * laptop
+            main.appendChild(total)
+
+              
+                
+    
+            let deletebtn =document.createElement("button")
+            deletebtn.textContent ="❌"
+            main.appendChild(deletebtn)
+            deletebtn.addEventListener("click",() =>{
+             added.remove()
+             console.log("delete clicked")
+                   
+                 })
+    
+        
+            added.append(deletebtn)
+          
+            console.log("item added to cart🛒")
+            }
+            else{
+                return 0;
+            }
+
+
+        })
+    </script>
+
+=======
+      <table border="1">
+        <thead>
+          <th>item</th>
+          <th>quantity</th>
+          <th>cost</th>
+          <th>total</th>
+          <th>Action</th>
+        </thead>
+        <tbody id="trow"></tbody>
+      </table>
+</div>
+
+<script>
+  let tbody = document.getElementById("trow")
+  let price = document.querySelector(".price").textContent;
+  let realPrice =parseInt(price)
+  console.log(realPrice)
+  let buybutton = document.getElementById("buy")
+  let TypedValue = document.getElementById("numberValue")
+
+  
+
+    buybutton.addEventListener("click",()=>{
+      
+      if(TypedValue.value !=="" && TypedValue.value >0){
+
+        let tableRow = document.createElement("tr")
+        
+  let tabledata = document.createElement("td")
+  let item = document.getElementById("item1").textContent
+  tabledata.textContent = item;
+  
+  let quantity = TypedValue.value
+  let td2 = document.createElement("td")
+  td2.textContent=quantity
+  
+  let cost = realPrice
+  td3 =document.createElement("td")
+  td3.textContent = cost
+  
+  let total = quantity * cost
+  td4 =document.createElement("td")
+  td4.textContent =total
+  
+  
+  
+  
+  tableRow.append(tabledata,td2,td3,td4)
+  tbody.appendChild(tableRow)
+  TypedValue.value =""
+  
+  
+}else{
+  alert("please enter number of item first🛒")
+}
+})
+
+
+</script>
+>>>>>>> c9b1ebe22c6aaf7a9b3261b66c418cd5fecccc9e
+ </body>
+ </html>

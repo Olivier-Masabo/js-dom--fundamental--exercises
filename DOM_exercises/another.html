@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <title>Star Rating</title>
+  <style>
+    h2 {
+      text-align: center;
+      font-size: 40px;
+    }
+    .all {
+      background-color: grey;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .star {
+      cursor: pointer;
+      font-size: 30px;
+    }
+    .changing {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h2>Rate us</h2>
+  <div class="all">
+    <i class="far fa-star star"></i>
+    <i class="far fa-star star"></i>
+    <i class="far fa-star star"></i>
+    <i class="far fa-star star"></i>
+    <i class="far fa-star star"></i>
+  </div>
+   
+
+  <script>
+    let stars =document.querySelectorAll(".star")
+    stars.forEach((item,index)=>{
+        item.addEventListener("click",() =>{
+            stars.forEach((element) =>element.classList.remove("changing"))
+            for(let i =0;i<=index; i++){
+                stars[i].classList.add("changing")
+                
+            }
+        })
+    })
+  </script>
+</body>
+</html>

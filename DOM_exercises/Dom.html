@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+ </head>
+ <style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main{
+        border: 1px solid grey;
+        padding: 10px;
+        text-align: center;
+        
+    }
+    .main h1{
+        padding-bottom: 2em;
+    }
+    button{
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid grey;
+        background: aqua;
+        cursor: pointer;
+
+    }
+ </style>
+ <body>
+  <div class="main">
+    <h1>qoute generating randomly</h1>
+    <blockquote id="qoute">Loading...</blockquote>
+    <p><span id="author">Loading...</span></p>
+    <button id="butto" onclick="getqoute()">Next qoute</button>
+
+  </div>
+  <script>
+      
+      async function getqoute(){
+        let qoute = document.getElementById("qoute");
+        let author = document.getElementById("author");
+    
+        const proxy = "https://api.allorigins.win/get?url=";
+    const target = encodeURIComponent(`https://zenquotes.io/api/random?nocache=${Date.now()}`);
+    const finalUrl = proxy + target;
+        let response = await fetch(finalUrl)
+        let data = await response.json()
+        const parsed = JSON.parse(data.contents)
+        console.log(parsed)
+        qoute.textContent = `"${parsed[0].q}"`;
+        author.textContent =`--${parsed[0].a}`;
+    }
+   getqoute();
+
+  </script>
+ </body>
+ </html>

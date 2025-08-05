@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+    <title>Rating</title>
+ </head>
+ <style>
+    h2{
+        text-align: center;
+        font-size: 40px;
+    }
+    .all{
+        background-color: grey;
+        padding:10px 20px;
+        text-align: center;
+    }
+    #star{
+        cursor: pointer;
+        font-size: 30px;
+        border: 1px solig grey;
+        
+    }
+    .changing{
+         color: yellow;
+    }
+ </style>
+ <body>
+    <h2>Rate us </h2>
+    <div class="all">
+       
+        <i class="far fa-star" id="star"></i> 
+        <i class="far fa-star" id="star"></i>
+        <i class="far fa-star" id="star"></i>
+        <i class="far fa-star" id="star"></i>
+        <i class="far fa-star" id="star"></i>
+
+    </div>
+    <script>
+        let mainDiv = document.querySelector(".all")
+     let stary= document.querySelectorAll(".far.fa-star")
+     stary.forEach((element,index)=>{
+        element.addEventListener("click",()=>{
+            console.log("you rated ", index + 1 , " stars")
+            // element.classList.toggle("changing")
+            let counter;
+            if(!element.classList.contains("changing")){
+            for( counter = index; counter >=0; counter--){
+                stary[counter].classList.add("changing")
+                }
+            } else{
+                for(let counter = index+1; counter <= stary.length-1; counter++){
+                    stary[counter].classList.remove("changing")
+                }
+            }
+
+        })
+     })
+     console.log(mainDiv.children)
+      
+    </script>
+ </body>
+ </html>
