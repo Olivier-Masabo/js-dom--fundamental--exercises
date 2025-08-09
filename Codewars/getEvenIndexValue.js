@@ -30,3 +30,15 @@ function between(a, b) {
   return newarr;
 }
 between(1, 4)
+
+function sumMul(n,m){
+  if(n <=0 || m <=0){
+    return "INVALID"
+  }
+ let sum = 0;
+  for (let i = n; i < m; i += n) {
+    sum += i;
+}
+  return sum
+  }
+sumMul(2,9)
