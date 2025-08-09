@@ -20,3 +20,13 @@ for(let i =1;i<=n;i++){
   return newArr;
 }
 monkeyCount(5)
+
+
+function between(a, b) {
+  let newarr =[]
+  for( let i =a; i <= b;i++){
+   newarr.push(i)
+  }
+  return newarr;
+}
+between(1, 4)
