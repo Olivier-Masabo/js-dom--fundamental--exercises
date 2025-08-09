@@ -42,3 +42,13 @@ function sumMul(n,m){
   return sum
   }
 sumMul(2,9)
+
+function booleanToString(b){
+ if(b){
+   return "true"
+ }
+  else{
+    return "false"
+  }
+}
+booleanToString(true)
