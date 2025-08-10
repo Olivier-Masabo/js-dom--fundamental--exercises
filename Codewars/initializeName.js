@@ -15,3 +15,10 @@ function repeats(arr){
 return arr.filter((item) =>arr.indexOf(item) === arr.lastIndexOf(item)).reduce((prev,curr) => prev + curr,0)
 };
 repeats([4,5,7,5,4,8])
+
+// multiplying all numbers in array
+
+function grow(x){
+return x.reduce((prev,curr) => prev * curr)
+}
+grow([4, 1, 1, 1, 4])
