@@ -1,14 +1,9 @@
  function initializeNames(name){
-  let result = name.split(" ").map((item)=>{
-    if(item[0] && item.length - 1 ){
-    return item
+    let splided = name.split(" ");
+    if(splided.length > 2){
+        return splided.map((a)=> splided.indexOf(a) > 0 && splided.indexOf(a) < splided.length-1 ? `${a.charAt(0)}.` : a).join(" ");
     }
-    else{
-        return item.charAt(0) + "."
-    }
-  })
-
- console.log(result)
+   return name
 
 }
-initializeNames('Lois Mary Lane')
+console.log(initializeNames('Lois Gihugu Mary'))
