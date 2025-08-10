@@ -7,3 +7,11 @@
 
 }
 console.log(initializeNames('Lois Gihugu Mary'))
+
+
+// sum of unique item in array
+
+function repeats(arr){
+return arr.filter((item) =>arr.indexOf(item) === arr.lastIndexOf(item)).reduce((prev,curr) => prev + curr,0)
+};
+repeats([4,5,7,5,4,8])
