@@ -11,3 +11,10 @@
   
 }
 duplicateCount("helloeeeellllooowwh")
+
+// getting only duplicate
+
+
+ function onlyDuplicates(str) {
+  return str.split("").filter(item => str.indexOf(item) !== str.lastIndexOf(item)).join("")
+}
