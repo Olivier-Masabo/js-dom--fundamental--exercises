@@ -5,3 +5,14 @@ let max= Math.max(...myArr)
 let min= Math.min(...myArr)
 let myObj = {sum,average,min,max}
 console.log(myObj)
+
+// ones and zeros
+
+const binaryArrayToNumber = arr => {
+ let arr1 = arr.map(elem=>elem.toString()).reduce((curr,newVal)=>curr+=newVal)
+ 
+ let result =parseInt(arr1,2)
+return result
+
+};
+ binaryArrayToNumber([0,1,0,1])
