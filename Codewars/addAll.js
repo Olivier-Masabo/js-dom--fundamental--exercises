@@ -9,3 +9,11 @@
     return count
   }
   console.log(myFunc([1, 2, 3,4,5]));
+
+
+  //finding total ascii code 
+
+  function uniTotal (string) {
+return string.split("").map(item => item.charCodeAt()).reduce((prev,acc ) => prev + acc,0)
+}
+console.log(uniTotal("Mary Had A Little Lamb"))
