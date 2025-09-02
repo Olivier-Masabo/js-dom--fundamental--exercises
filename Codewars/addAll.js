@@ -17,3 +17,16 @@
 return string.split("").map(item => item.charCodeAt()).reduce((prev,acc ) => prev + acc,0)
 }
 console.log(uniTotal("Mary Had A Little Lamb"))
+
+
+// counting sheep
+
+function countSheeps(sheep) {
+  return sheep.filter(item => item === true).length
+}
+console.log(countSheeps([true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]))
