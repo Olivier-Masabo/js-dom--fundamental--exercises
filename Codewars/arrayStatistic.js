@@ -16,3 +16,12 @@ return result
 
 };
  binaryArrayToNumber([0,1,0,1])
+
+
+ // reverse it program
+
+ const reverseIt = data => 
+  Array.isArray(data) ? [...data].reverse() : 
+  typeof data === "number" ? +data.toString().split("").reverse().join("") : 
+  typeof data === "string" ? data.split("").reverse().join("") : 
+  data;
