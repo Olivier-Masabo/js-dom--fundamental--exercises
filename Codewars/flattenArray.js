@@ -49,3 +49,10 @@ function arrayDiff(a, b) {
   return a.filter(item =>!b.includes(item))
 }
 arrayDiff([1,2,3], [1,2])
+
+// find specific item in nested arrays
+
+function locate(arr, value) {
+    return arr.flat(Infinity).some(item => item === value)
+}
+console.log(locate(['two','six',['five','seven'],'three,nine'],"six"))
