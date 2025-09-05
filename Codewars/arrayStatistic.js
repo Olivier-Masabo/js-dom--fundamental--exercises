@@ -25,3 +25,14 @@ return result
   typeof data === "number" ? +data.toString().split("").reverse().join("") : 
   typeof data === "string" ? data.split("").reverse().join("") : 
   data;
+
+  // adding question marks when it not there
+
+  function ensureQuestion(s) {
+  if(s.includes("?")){
+    return s
+  }
+  else{
+    return s + "?"
+  }
+}
