@@ -36,3 +36,7 @@ return result
     return s + "?"
   }
 }
+
+// password validation in single line
+
+const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$/;
