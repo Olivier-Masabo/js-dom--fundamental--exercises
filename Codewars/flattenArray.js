@@ -28,3 +28,11 @@ function firstNonRepeatingLetter(s) {
   return ""
 }
 firstNonRepeatingLetter("moonmen")
+
+
+//flatten nested array
+
+function flatten(...args) {
+    return args.flat(Infinity)
+}
+console.log(flatten([ 1, [2, 3], 4, 5, [6, [7, [8]]]], [1,2,3,4,5,6,7,8] ))
