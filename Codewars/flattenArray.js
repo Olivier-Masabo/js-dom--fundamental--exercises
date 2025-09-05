@@ -36,3 +36,16 @@ function flatten(...args) {
     return args.flat(Infinity)
 }
 console.log(flatten([ 1, [2, 3], 4, 5, [6, [7, [8]]]], [1,2,3,4,5,6,7,8] ))
+
+function flatting(array) {
+ return array.flat(1)
+}
+console.log(flatting([ 1, [2, 3], 4, 5, [6, [7, [8]]]]))
+
+
+//finding difference betweeen 2 array
+ 
+function arrayDiff(a, b) {
+  return a.filter(item =>!b.includes(item))
+}
+arrayDiff([1,2,3], [1,2])
