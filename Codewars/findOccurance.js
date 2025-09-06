@@ -36,3 +36,17 @@ function twoSum(numbers, target) {
 }
 
 console.log(twoSum([1, 2, 3])); 
+
+//sorting string depending on thier indices
+
+function sepStr(str) {
+    let sentence =str.split(" ");
+    let foreach=Math.max(...sentence.map(item => item.length))
+    let newArr =[]
+    for(let i=0;i<foreach;i++){
+        const row=[]
+        sentence.forEach(word => row.push(word[i] || ""))
+        newArr.push(row)
+    }
+    return newArr;
+}
