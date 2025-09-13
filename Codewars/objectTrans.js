@@ -18,3 +18,17 @@ function pigIt(str) {
   });
   return words.join(" ");
 }
+
+//title case
+
+function titleCase(title, minorWords = "") {
+  let minors = minorWords.toLowerCase().split(" ");
+  return title
+    .toLowerCase()
+    .split(" ")
+    .map((w, i) =>
+      w ? (i === 0 || !minors.includes(w) ? w[0].toUpperCase() + w.slice(1) : w) : ""
+    )
+    .join(" ");
+}
+console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
